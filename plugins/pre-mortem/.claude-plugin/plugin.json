@@ -1,0 +1,6 @@
+{
+  "name": "pre-mortem",
+  "description": "Structured pre-mortem: assume the plan failed, surface specific failure stories, rank them, and turn the top risks into fix-now / watch / accept actions",
+  "version": "1.0.0",
+  "author": { "name": "akai-joy" }
+}

@@ -10,6 +10,18 @@
       "source": "./plugins/prompt-coach",
       "description": "Role-tailored Claude enablement sheets covering newer Claude products, with admin/plan gating flags",
       "version": "1.0.0"
+    },
+    {
+      "name": "2ndcouncil",
+      "source": "./plugins/2ndcouncil",
+      "description": "Five-persona council of Claude subagents that pressure-tests a hard decision, ending in an Opus verdict",
+      "version": "1.0.0"
+    },
+    {
+      "name": "pre-mortem",
+      "source": "./plugins/pre-mortem",
+      "description": "Structured pre-mortem that turns imagined failures into fix-now / watch / accept actions",
+      "version": "1.0.0"
     }
   ]
 }

@@ -1,0 +1,6 @@
+{
+  "name": "2ndcouncil",
+  "description": "Five-persona council of Claude subagents that pressure-tests a hard decision: independent answers, anonymous peer review, then an Opus verdict",
+  "version": "1.0.0",
+  "author": { "name": "akai-joy" }
+}
