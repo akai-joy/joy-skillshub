@@ -1,0 +1,67 @@
+{
+  "skill_name": "prompt-coach-v2",
+  "evals": [
+    {
+      "id": 1,
+      "name": "finance-m365-slack",
+      "prompt": "I'm an FP&A manager at Lumen Logistics (we're on Claude Enterprise). We use Microsoft 365 and Slack. I own the monthly forecast and the board deck, and this quarter I'm rebuilding our headcount model. Can you make me an enablement sheet showing which of the newer Claude products I should actually be using, with prompts I can try?",
+      "expected_output": "Full sheet. Claude for Excel leads Table 2. Microsoft 365 add-ins are flagged with Install required / Admin-enabled. Ask your admin names the M365 admin.",
+      "files": [],
+      "checks": {
+        "expect_sheet": true,
+        "required_products": ["Claude for Excel"],
+        "forbidden_products": [],
+        "require_research_row": true
+      }
+    },
+    {
+      "id": 2,
+      "name": "recruiter-google-hipaa-no-slack",
+      "prompt": "Recruiting lead at Pinegrove Health here, we're on the Claude Team plan. We're a HIPAA org, all-in on Google Workspace, and we use Microsoft Teams for chat, not Slack. Most of my day is sourcing candidates on LinkedIn and job boards, writing outreach, and scheduling interview loops. What Claude stuff should I set up and what prompts should I try?",
+      "expected_output": "Full sheet. No Microsoft add-ins and no Claude Tag. If Claude in Chrome appears, it is flagged Admin-enabled and notes it's off by default for HIPAA orgs.",
+      "files": [],
+      "checks": {
+        "expect_sheet": true,
+        "required_products": [],
+        "forbidden_products": ["Claude for Excel", "Claude for Word", "Claude for PowerPoint", "Claude for Outlook", "Claude Tag"],
+        "chrome_must_mention_hipaa": true
+      }
+    },
+    {
+      "id": 3,
+      "name": "backend-engineer",
+      "prompt": "Senior backend engineer at Quarry (B2B payments API, Claude Team plan, Slack + Google Workspace). I'm leading a migration from a Python 3.9 monolith to services and I own our flaky integration test suite. Give me an enablement sheet for Claude with the newer tools, not just chat.",
+      "expected_output": "Full sheet. Claude Code is included, the install shown is the native installer (not npm), and agentic prompts say where Claude stops to check in.",
+      "files": [],
+      "checks": {
+        "expect_sheet": true,
+        "required_products": ["Claude Code"],
+        "forbidden_products": [],
+        "require_native_installer_if_cli": true
+      }
+    },
+    {
+      "id": 4,
+      "name": "sparse-marketing-ask-once",
+      "prompt": "im in marketing, what new claude stuff should i be using",
+      "expected_output": "A single message asking for company, role/responsibilities, plan, and tools (M365/Google, Slack). No tables yet.",
+      "files": [],
+      "checks": {
+        "expect_sheet": false
+      }
+    },
+    {
+      "id": 5,
+      "name": "legal-counsel-m365",
+      "prompt": "I'm in-house commercial counsel at Brightwater Foods, Claude Enterprise, Microsoft 365, Slack. I review vendor and customer contracts all day, maintain our playbook of fallback positions, and I'm tracking new US state privacy laws for a memo to the GC. Put together a Claude enablement sheet for me covering the newer products.",
+      "expected_output": "Full sheet. Claude for Word and Research appear. The Research prompt has all six labelled parts. Prompts don't embed real contract or personal data.",
+      "files": [],
+      "checks": {
+        "expect_sheet": true,
+        "required_products": ["Claude for Word", "Research"],
+        "forbidden_products": [],
+        "require_research_row": true
+      }
+    }
+  ]
+}

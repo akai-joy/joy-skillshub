@@ -35,6 +35,16 @@ To get updates, run `/plugin marketplace update joy-skillshub`, then `/reload-pl
 
 Zip a skill folder, for example `plugins/prompt-coach/skills/prompt-coach-v2/`, and upload it in your skills settings. On Team and Enterprise plans, your org admin has to allow custom skills.
 
+## Evals (prompt-coach-v2)
+
+`plugins/prompt-coach/skills/prompt-coach-v2/evals/` holds 5 test prompts (`evals.json`) and a deterministic checker (`check_output.py`). The checker verifies table headers, prompt labels, access-gating prefixes, the "Ask your admin" checklist, the six Research parts, and per-role product rules:
+
+```
+python3 plugins/prompt-coach/skills/prompt-coach-v2/evals/check_output.py response.md --eval-id 1
+```
+
+It writes `grading.json` in the format skill-creator's benchmark scripts read. Prompt quality still needs a human look.
+
 ## Note
 
 Product availability and admin settings change often. `prompt-coach-v2/reference/products.md` has a last-verified date, so check it against https://support.claude.com before relying on it.
