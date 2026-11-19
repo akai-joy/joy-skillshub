@@ -1,19 +1,19 @@
-# prompt-coach-v2
+# joy-skillshub
 
-A Claude skill that builds a role-specific Claude enablement sheet. It recommends Claude's newer products (Claude for Excel / Microsoft 365, Claude Tag, Claude in Chrome, Cowork, Claude Code, Claude Docs, connectors and skills). Every recommendation that needs admin action, a particular plan, or an install is flagged, and the sheet ends with an "Ask your admin" checklist.
+A collection of Claude skills. Each top-level folder holds one skill.
 
-## Contents
+## Skills
 
-- `prompt-coach-v2/SKILL.md`: instructions and output format
-- `prompt-coach-v2/reference/products.md`: product catalog with setup steps and who has to enable each product (includes a last-verified date)
-- `prompt-coach-v2/templates/next_steps.md`: admin checklist and next steps
+| Skill | What it does |
+|---|---|
+| [`prompt-coach-v2`](prompt-coach-v2/) | Builds a role-specific Claude enablement sheet. It recommends newer Claude products (Claude for Excel / Microsoft 365, Claude Tag, Claude in Chrome, Cowork, Claude Code, Claude Docs, connectors and skills), flags each one that needs an admin, a particular plan, or an install, and ends with an "Ask your admin" checklist. |
 
-## Install
+## Install a skill
 
-**Claude Code:** copy the `prompt-coach-v2/` folder into `~/.claude/skills/`.
+**Claude Code:** copy the skill's folder (for example `prompt-coach-v2/`) into `~/.claude/skills/`.
 
-**Claude app:** zip the `prompt-coach-v2/` folder and upload it in your skills settings. On Team and Enterprise plans, your org admin has to allow custom skills.
+**Claude app:** zip the skill's folder and upload it in your skills settings. On Team and Enterprise plans, your org admin has to allow custom skills.
 
 ## Note
 
-Product availability and admin settings change often. Check `reference/products.md` against https://support.claude.com before relying on it.
+Product availability and admin settings change often. `prompt-coach-v2/reference/products.md` has a last-verified date, so check it against https://support.claude.com before relying on it.
