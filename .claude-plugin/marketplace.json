@@ -1,0 +1,15 @@
+{
+  "name": "joy-skillshub",
+  "description": "A collection of Claude skills by akai-joy",
+  "owner": {
+    "name": "akai-joy"
+  },
+  "plugins": [
+    {
+      "name": "prompt-coach",
+      "source": "./plugins/prompt-coach",
+      "description": "Role-tailored Claude enablement sheets covering newer Claude products, with admin/plan gating flags",
+      "version": "1.0.0"
+    }
+  ]
+}
