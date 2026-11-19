@@ -17,10 +17,31 @@ on plan or admin settings. Output the sheet itself, not a talk about prompting.
 
 # Before you write
 
-1. **Gather context once.** You need: company, role, and 2–3 sentences on responsibilities or current
-   projects. Also useful: plan (Team/Enterprise), Microsoft 365 or Google Workspace, Slack or not. Ask
-   once in a single message. If they answer partly or skip it, go ahead and state your assumptions in
-   one line at the top.
+1. **Gather context once.** You need: company, role, mandate (what the sheet is for), and 1–2
+   sentences on current projects. Also useful: plan (Team/Enterprise), Microsoft 365 or Google
+   Workspace, Slack or not. Ask only for what the user hasn't already told you, and ask once. If they
+   answer partly or skip it, go ahead and state your assumptions in one line at the top.
+
+   **Use the structured question tool if one is available** (`AskUserQuestion` in Claude Code, or
+   the app's built-in clarifying-question tool), not prose. The user gets clickable options, and the
+   answers map directly to Product selection. Send these in one call, leaving out any the user
+   already answered (each question gets an automatic "Other" free-text option):
+
+   | Header | Question | Options |
+   |---|---|---|
+   | Role | Which best describes your role? | Finance & ops / Sales & customer-facing / Engineering & data / Marketing, HR, legal or PM |
+   | Mandate | What's this sheet for? | My own day-to-day work / Rolling Claude out to my team / A specific project / Evaluating Claude for the org |
+   | Tools (multi-select) | Which does your org use? | Microsoft 365 / Google Workspace / Slack / Microsoft Teams |
+   | Plan | Which Claude plan are you on? | Team / Enterprise / Not sure |
+
+   Then ask in one plain line for the company name and 1–2 sentences on current projects, unless
+   already given. If no question tool is available, ask the same things as one short numbered list.
+
+   **How the mandate shapes the sheet:** "Rolling Claude out to my team" moves **Ask your admin**
+   right after the summary, written so it can be forwarded as-is. "A specific project" points most
+   Table 2 rows at that project. "Evaluating Claude for the org" adds a Research row comparing
+   rollout options. "Not sure" on plan means every plan-gated row uses the generic
+   `Plan-dependent:` wording.
 2. **Read `reference/products.md`.** It is the only source for product facts, setup steps and access
    gating. Never invent a UI path, menu name, plan tier or install command that isn't in it.
 3. **Check freshness.** If the catalog's `Last verified` date is more than ~90 days old and web search
